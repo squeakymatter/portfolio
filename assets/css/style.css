@@ -1,0 +1,244 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root {
+    --primary-color: #4D5061;
+    --secondary-color: #4c80bc;
+    --tertiary-color: #cdd1c4;
+}
+
+  body {
+    color: var(--primary-color);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  h1 {
+    font-weight: bold;
+    margin: 0;
+    font-size: 36px;
+    color: var(--tertiary-color);
+  }
+
+/* Start Header */
+
+header {
+    padding: 25px 35px;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+  }
+
+  header a {
+    color: var(--tertiary-color);
+    text-decoration: none;
+  }
+
+  header h1 a {
+      text-decoration: underline
+  }
+
+  header nav { 
+    margin: 7px 0;
+  }
+
+  header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+  }
+
+  header nav ul li a {
+    margin: 0 30px;
+    font-weight: lighter;
+    font-size: 1.25vw;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+/* End Header*/
+
+/* Start Hero */
+
+#hero {
+    height: 25vw;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.125), rgba(0, 0, 0, 0.125)), url('/assets/images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-wrap: wrap;   
+    justify-content: space-between;
+    align-items: space-between;
+    
+}
+
+.headshot {
+    height: 150px;
+    border-radius: 15px;
+    border: 3px solid var(--secondary-color);
+    margin: 50px
+    }
+
+.subtitle {
+    color: var(--tertiary-color);
+    align-self: flex-end;
+    justify-self: flex-end;
+    margin: 50px
+}
+
+
+/* End Hero */
+
+/* Start Work Section */
+
+.flex-row {
+    margin: 20px auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.section-title {
+    flex: 1 15%;
+    align-items: flex-end;
+    text-align: right;
+    padding: 20px;
+    color: var(--secondary-color);
+}
+
+.section-content {
+    flex: 2 85%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 20px;
+    color: var(--secondary-color);
+    border-left: 3px solid;
+    min-height: 80px;
+    
+}
+.section-content p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 1.25;
+}
+.section-content div {
+    flex: 1;
+    text-align: center;
+}
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+.work-grid-item {
+    border: 5px solid var(--tertiary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.work-grid-item img{
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     filter: brightness(75%);
+}
+.work-grid-item a{
+     height: 100%;
+     width: 100%;
+}
+.work-grid-item img:hover{
+     filter: brightness(100%);
+}
+.work-grid-item.main {
+    grid-column: 1 / span 2;
+    grid-row: 1 /span 2;
+}
+.label {
+     position: absolute;
+     bottom: 0px;
+     left: 0;
+     background-color: var(--tertiary-color);
+     padding: 10px;
+     text-align: left;
+     margin-bottom: 25px;
+}
+.label h3{
+    font-size: 1.75vw;
+}
+.section-content .description{
+    font-size: 1.25vw;
+    text-align: left;
+}
+/* End Work Section */
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 980px) {
+    header {
+        padding: 15px 15px 0 15px;
+        justify-content: center;
+        position: relative;
+    }
+
+    header h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin: 20px 0 10px 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    header nav ul li a {
+        font-size: 14px;
+        padding: 6px 8px;
+    }
+    .flex-row{
+         width: 100%;
+    }
+}
+   
+@media screen and (max-width: 1024px) {
+
+
+    .section-content {
+        border-left: none;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section-title {
+        text-align: center;
+    }
+
+    .headshot {
+        display: none;
+    }
+
+    .subtitle {
+        display: none;
+    }
+
+    .work-grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
