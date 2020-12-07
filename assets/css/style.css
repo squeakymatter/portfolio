@@ -38,11 +38,10 @@ header {
 
   header a {
     color: var(--tertiary-color);
-    text-decoration: none;
   }
 
   header h1 a {
-      text-decoration: underline
+      text-decoration: none;
   }
 
   header nav { 
